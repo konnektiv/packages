@@ -99,7 +99,8 @@ class SyncAdapter implements SyncAdapterInterface
 
         $removed = array_diff($existingPackages, $packages);
         foreach ($removed as $package) {
-            $this->entityManager->remove($package);
+	    error_log("Removing:" . print_r($package, true));
+//            $this->entityManager->remove($package);
         }
 
         return $packages;
